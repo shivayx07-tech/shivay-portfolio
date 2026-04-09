@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+:root {
+  --background: #110f1c; /* Deep night blue/purple */
+  --foreground: #ffffff;
+  --neon-cyan: #3b82f6; /* Shifted to softer blue */
+  --neon-violet: #a855f7; /* Brighter purple */
+  --neon-blue: #6366f1; /* Indigo */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-neon-cyan: var(--neon-cyan);
+  --color-neon-violet: var(--neon-violet);
+  --color-neon-blue: var(--neon-blue);
+  --font-sans: var(--font-outfit), sans-serif;
+  --font-mono: var(--font-inter), monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.015em;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+::selection {
+  background: var(--neon-cyan);
+  color: #000;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glassmorphism utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+  background: rgba(15, 15, 15, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 243, 255, 0.3);
+  box-shadow: 0 8px 40px rgba(0, 243, 255, 0.1);
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Text Gradients */
+.text-gradient {
+  background: linear-gradient(to right, var(--neon-cyan), var(--neon-violet));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-alt {
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.5) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
